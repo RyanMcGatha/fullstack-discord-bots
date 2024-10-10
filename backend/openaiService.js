@@ -12,7 +12,7 @@ async function getOpenAIResponse(userMessage, prompt) {
     const completion = await openai.chat.completions.create({
       model: "gpt-4",
       messages: [
-        { role: "system", content: prompt }, // Place the system message first
+        { role: "system", content: prompt },
         { role: "user", content: userMessage },
       ],
     });

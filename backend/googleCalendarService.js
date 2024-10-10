@@ -49,6 +49,15 @@ function loadToken() {
   }
 }
 
+// Check if a valid token exists
+function hasValidToken() {
+  if (loadToken()) {
+    const credentials = oAuth2Client.credentials;
+    return credentials && credentials.access_token && credentials.refresh_token;
+  }
+  return false;
+}
+
 // Add an event to the Google Calendar
 async function addEventToCalendar(eventDetails) {
   const calendar = google.calendar({ version: "v3", auth: oAuth2Client });
@@ -70,4 +79,10 @@ async function addEventToCalendar(eventDetails) {
   }
 }
 
-module.exports = { getAuthUrl, authenticate, loadToken, addEventToCalendar };
+module.exports = {
+  getAuthUrl,
+  authenticate,
+  loadToken,
+  addEventToCalendar,
+  hasValidToken,
+};

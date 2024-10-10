@@ -16,6 +16,7 @@ const Signin = () => {
         password,
       });
       if (response.status === 200) {
+        localStorage.setItem("user", JSON.stringify(response.data.user));
         window.location.href = "/dashboard";
       }
     } catch (error) {

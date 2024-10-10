@@ -1,0 +1,19 @@
+.manage-bot-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.bot-status,
+.bot-prompt,
+.generate-leads {
+  margin-bottom: 30px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
